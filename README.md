@@ -18,7 +18,9 @@ Once the image is built you can run an instance of it as a container with the fo
 `docker run -p <port>:<port> tagname`
 
 ## Accessing the application running on AWS
-Simply navigate to where the app is running on AWS at the following link 3.16.48.2:5000 NOTE: This will be taken down by the end of 2019. 
+Simply navigate to where the app is running on AWS at the following address 3.16.48.2:5000
+
+NOTE: This will be taken down by the end of 2019. 
 
 # Architecture
 There are three key components of this app detailed in the architecture diagram below. 
