@@ -49,7 +49,6 @@ class Watson_Translator:
         input_dict = {"text": self.input_text,
                       "model_id": model}
         return json.dumps(input_dict)
-        # "{"text": "Hello, world!", \"model_id\":\"en-es\"}" "{url}/v3/translate?version = 2018-05-01
 
     def get_output_text(self):
         API_ENDPOINT = self.url + '/v3/translate?version=2018-05-01'
@@ -61,14 +60,3 @@ class Watson_Translator:
                           auth=HTTPBasicAuth("apikey", API_KEY), headers=HEADER)
         pastebin_url = r.text
         return pastebin_url
-
-
-# translator = Watson_Translator('CjlanhKkhlOnV2_-3e9tHpBXldNSGLHVlWV9l3D_xvk0', 'Hello how are you?',
-#                               'English', 'Spanish', 'https://gateway.watsonplatform.net/language-translator/api')
-
-"""
-translator = Watson_Translator(api_key=apikey, input_text='Hello how are you?',
-                               input_lang='English', output_lang='Spanish',
-                               url='https://gateway.watsonplatform.net/language-translator/api')"""
-
-# translator.get_output_text()
