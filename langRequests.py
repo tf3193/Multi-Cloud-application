@@ -33,6 +33,15 @@ class Watson_Translator:
     url = ""
 
     def __init__(self, api_key, input_text, input_lang, output_lang,  url):
+        """Constructor for the class. 
+        
+        Arguments:
+            api_key {[str]} -- the end user API key
+            input_text {[str]} -- input text to be translated
+            input_lang {[str]} -- language of input_text
+            output_lang {[str]} -- language for input_text to be translated to. 
+            url {[str]} -- endpoint for watson_translator
+        """
         self.api_key = api_key
         self.input_lang = input_lang
         self.input_text = input_text
@@ -40,6 +49,11 @@ class Watson_Translator:
         self.url = url
 
     def create_json_input(self):
+        """This will create the json input for the Watson Translator. This should never be called alone.  
+        
+        Returns:
+            [json] -- json structured input comprised of class features. 
+        """
         if self.input_lang != "English" and self.output_lang != "English":
             return "One language must be english"
 
@@ -51,6 +65,11 @@ class Watson_Translator:
         return json.dumps(input_dict)
 
     def get_output_text(self):
+        """Method to make a call to the Watson Translator. The constructor must be called first. 
+        
+        Returns:
+            [json] -- json of translated text. 
+        """
         API_ENDPOINT = self.url + '/v3/translate?version=2018-05-01'
         API_KEY = self.api_key
         HEADER = {"Content-Type": "application/json"}
